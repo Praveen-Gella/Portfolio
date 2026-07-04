@@ -108,11 +108,14 @@
     color:var(--steel);
   }
   .nav-links a:hover{ color:var(--ink); }
+  
+  /* Container for the two buttons */
   .nav-actions {
     display:flex;
     gap:12px;
     align-items:center;
   }
+  
   .nav-cta{
     font-size:13px;
     font-family:'IBM Plex Mono', monospace;
@@ -125,6 +128,7 @@
 
   @media (max-width:720px){
     .nav-links{ display:none; }
+    /* Hide the phone button on small screens to save space, keeping Email me */
     .nav-actions .nav-cta:first-child { display:none; }
   }
 
@@ -464,7 +468,7 @@
       <a href="praveen_gella_resume.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
     <div class="nav-actions">
-      <!-- CHANGED TEXT TO "Contact me" -->
+      <!-- BUTTON TEXT CHANGED TO "Contact me" -->
       <a class="nav-cta" href="tel:+917377823099">Contact me</a>
       <a class="nav-cta" href="mailto:praveengella13@gmail.com">Email me</a>
     </div>
@@ -706,7 +710,6 @@
       <p>Open to HR Analytics and Data &amp; Business Analytics roles — in India, the UAE, and the UK.</p>
       <div class="contact-links">
         <a class="btn btn-primary" href="mailto:praveengella13@gmail.com">praveengella13@gmail.com</a>
-        <!-- CHANGED TEXT TO "Contact me" -->
         <a class="btn btn-primary" href="tel:+917377823099">Contact me</a>
         <a class="btn btn-ghost" href="https://linkedin.com/in/praveengella" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-ghost" href="praveen_gella_resume.pdf" target="_blank" rel="noopener">Download Resume</a>
