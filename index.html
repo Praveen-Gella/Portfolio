@@ -108,6 +108,11 @@
     color:var(--steel);
   }
   .nav-links a:hover{ color:var(--ink); }
+  .nav-actions {
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
   .nav-cta{
     font-size:13px;
     font-family:'IBM Plex Mono', monospace;
@@ -120,6 +125,7 @@
 
   @media (max-width:720px){
     .nav-links{ display:none; }
+    .nav-actions .nav-cta:first-child { display:none; } /* Hide phone on very small screens in nav to save space */
   }
 
   /* ---------- HERO ---------- */
@@ -455,10 +461,12 @@
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#certifications">Certifications</a>
-      <!-- ADDED RESUME LINK HERE -->
       <a href="praveen_gella_resume.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
-    <a class="nav-cta" href="mailto:praveengella13@gmail.com">Email me</a>
+    <div class="nav-actions">
+      <a class="nav-cta" href="tel:+917377823099">+91 7377823099</a>
+      <a class="nav-cta" href="mailto:praveengella13@gmail.com">Email me</a>
+    </div>
   </div>
 </header>
 
@@ -471,7 +479,6 @@
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#projects">View projects</a>
       <a class="btn btn-ghost" href="#experience">See experience</a>
-      <!-- ADDED RESUME BUTTON HERE -->
       <a class="btn btn-ghost" href="praveen_gella_resume.pdf" target="_blank" rel="noopener">Download Resume</a>
     </div>
     <div class="kpi-strip">
@@ -698,8 +705,8 @@
       <p>Open to HR Analytics and Data &amp; Business Analytics roles — in India, the UAE, and the UK.</p>
       <div class="contact-links">
         <a class="btn btn-primary" href="mailto:praveengella13@gmail.com">praveengella13@gmail.com</a>
+        <a class="btn btn-primary" href="tel:+917377823099">+91 7377823099</a>
         <a class="btn btn-ghost" href="https://linkedin.com/in/praveengella" target="_blank" rel="noopener">LinkedIn</a>
-        <!-- ADDED RESUME BUTTON HERE -->
         <a class="btn btn-ghost" href="praveen_gella_resume.pdf" target="_blank" rel="noopener">Download Resume</a>
       </div>
       <div class="contact-meta">HYDERABAD, INDIA</div>
