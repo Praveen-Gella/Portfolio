@@ -335,6 +335,21 @@
   .spec-value strong{ font-family:'IBM Plex Mono', monospace; font-weight:600; color:var(--signal); }
   .spec-value.tools{ color:var(--steel); font-family:'IBM Plex Mono', monospace; font-size:12.5px; }
 
+  /* Project Link Styling */
+  .project-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--signal);
+    text-decoration: none;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    display: inline-block;
+    transition: color 0.15s ease;
+  }
+  .project-link:hover { color: var(--ink); }
+
   @media (max-width:900px){
     .project-grid{ grid-template-columns:1fr; }
   }
@@ -468,7 +483,6 @@
       <a href="praveen_gella_resume.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
     <div class="nav-actions">
-      <!-- BUTTON TEXT CHANGED TO "Contact me" -->
       <a class="nav-cta" href="tel:+917377823099">Contact me</a>
       <a class="nav-cta" href="mailto:praveengella13@gmail.com">Email me</a>
     </div>
@@ -562,6 +576,7 @@
           <div class="spec-label">Tools</div>
           <div class="spec-value tools">Python · scikit-learn · Matplotlib</div>
         </div>
+        <a href="https://colab.research.google.com/drive/1D8iDrkaY6qXjEAuwq-_r1kxYMC509YUV?usp=sharing" target="_blank" rel="noopener" class="project-link">View Notebook &nearr;</a>
       </div>
 
       <div class="project-card reveal">
@@ -583,6 +598,7 @@
           <div class="spec-label">Tools</div>
           <div class="spec-value tools">Power BI · DAX · Power Query</div>
         </div>
+        <a href="https://github.com/Praveen-Gella/Workforce-Performance-Analysis.git" target="_blank" rel="noopener" class="project-link">View Repository &nearr;</a>
       </div>
 
       <div class="project-card reveal">
@@ -604,6 +620,7 @@
           <div class="spec-label">Tools</div>
           <div class="spec-value tools">Power BI · DAX</div>
         </div>
+        <a href="https://github.com/Praveen-Gella/Recruitment-Funnel.git" target="_blank" rel="noopener" class="project-link">View Repository &nearr;</a>
       </div>
 
       <div class="project-card reveal">
@@ -625,6 +642,7 @@
           <div class="spec-label">Tools</div>
           <div class="spec-value tools">Power BI · DAX</div>
         </div>
+        <a href="https://github.com/Praveen-Gella/Impact-of-Training-Development-on-Performance.git" target="_blank" rel="noopener" class="project-link">View Repository &nearr;</a>
       </div>
 
     </div>
