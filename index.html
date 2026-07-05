@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Praveen Gella — HR Analytics Portfolio</title>
+<title>Gella Praveen — HR Analytics Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -108,14 +108,14 @@
     color:var(--steel);
   }
   .nav-links a:hover{ color:var(--ink); }
-  
+
   /* Container for the two buttons */
   .nav-actions {
     display:flex;
     gap:12px;
     align-items:center;
   }
-  
+
   .nav-cta{
     font-size:13px;
     font-family:'IBM Plex Mono', monospace;
@@ -137,6 +137,13 @@
     padding:96px 0 60px;
     border-bottom:1px solid var(--line);
   }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:48px;
+    align-items:center;
+    margin-bottom:56px;
+  }
   .hero-eyebrow{
     font-family:'IBM Plex Mono', monospace;
     font-size:13px;
@@ -149,7 +156,14 @@
     font-size:clamp(38px,6vw,58px);
     font-weight:700;
     line-height:1.05;
-    margin-bottom:22px;
+    margin-bottom:14px;
+  }
+  .hero-title{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--signal);
+    margin-bottom:20px;
   }
   .hero .tagline{
     font-size:clamp(19px,2.4vw,24px);
@@ -181,7 +195,7 @@
     font-size:16px;
     margin-bottom:36px;
   }
-  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:64px; }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
   .btn{
     font-size:14px;
     font-weight:500;
@@ -196,6 +210,41 @@
   .btn-primary:hover{ transform:translateY(-2px); background:var(--signal); }
   .btn-ghost{ border:1px solid var(--line); color:var(--ink); }
   .btn-ghost:hover{ border-color:var(--ink); transform:translateY(-2px); }
+
+  /* Hero photo */
+  .hero-photo{ display:flex; justify-content:center; }
+  .photo-frame{
+    width:168px; height:168px;
+    border-radius:50%;
+    overflow:hidden;
+    border:2px solid var(--line);
+    background:var(--paper-alt);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .photo-frame img{
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:50%;
+  }
+  .photo-frame .photo-initials{
+    display:none;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:44px;
+    font-weight:700;
+    color:var(--steel);
+    letter-spacing:0.02em;
+  }
+  .photo-frame.photo-fallback img{ display:none; }
+  .photo-frame.photo-fallback .photo-initials{ display:flex; }
+
+  @media (max-width:720px){
+    .hero-grid{ grid-template-columns:1fr; gap:28px; text-align:left; }
+    .hero-photo{ order:-1; justify-content:flex-start; }
+  }
 
   /* KPI strip */
   .kpi-strip{
@@ -255,6 +304,42 @@
   .about-grid p{ color:var(--steel); font-size:16px; margin-bottom:16px; max-width:520px; }
   .about-grid p strong{ color:var(--ink); font-weight:600; }
 
+  .unique-callout{
+    border-left:3px solid var(--signal);
+    background:var(--signal-light);
+    padding:18px 22px;
+    border-radius:0 8px 8px 0;
+    margin:22px 0;
+    max-width:520px;
+  }
+  .unique-callout .unique-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--signal);
+    margin-bottom:10px;
+    font-weight:600;
+  }
+  .unique-callout p{
+    margin-bottom:0;
+    color:var(--ink);
+    font-size:15px;
+    max-width:none;
+  }
+
+  .objective-block{ margin-top:8px; max-width:520px; }
+  .objective-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--steel);
+    margin-bottom:10px;
+    font-weight:600;
+  }
+  .objective-block p{ margin-bottom:0; }
+
   .edu-ledger{ border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
   .edu-row{
     padding:18px 20px;
@@ -275,6 +360,51 @@
 
   @media (max-width:820px){
     .about-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .skill-card{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    background:var(--paper);
+    transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .skill-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--signal);
+    box-shadow:0 12px 28px -18px rgba(20,33,61,0.35);
+  }
+  .skill-cat{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--signal);
+    margin-bottom:14px;
+    font-weight:600;
+  }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink);
+    background:var(--paper-alt);
+    border:1px solid var(--line);
+    padding:5px 10px;
+    border-radius:6px;
+  }
+
+  @media (max-width:900px){
+    .skills-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:560px){
+    .skills-grid{ grid-template-columns:1fr; }
   }
 
   /* ---------- PROJECTS ---------- */
@@ -472,11 +602,12 @@
 <header class="nav">
   <div class="nav-inner">
     <div class="logo-mark">
-      <div class="logo-badge">PG</div>
-      Praveen Gella
+      <div class="logo-badge">GP</div>
+      Gella Praveen
     </div>
     <nav class="nav-links">
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#certifications">Certifications</a>
@@ -491,14 +622,25 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="hero-eyebrow">MBA · HR ANALYTICS</div>
-    <h1>Praveen Gella</h1>
-    <p class="tagline">I turn workforce data into <span class="underline">decisions</span> HR teams can act on.</p>
-    <p class="support">A Computer Science background paired with an MBA in HR Analytics — built for roles that sit between people and data: HR Analytics, and Data &amp; Business Analytics.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#projects">View projects</a>
-      <a class="btn btn-ghost" href="#experience">See experience</a>
-      <a class="btn btn-ghost" href="praveen_gella_resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">MBA · HR ANALYTICS</div>
+        <h1>Gella Praveen</h1>
+        <div class="hero-title">HR Analytics Professional · Data-Driven People Insights</div>
+        <p class="tagline">Aspiring HR professional with expertise in <span class="underline">recruitment</span>, HR analytics, and data-driven decision-making.</p>
+        <p class="support">A Computer Science background paired with an MBA in HR Analytics — built for roles that sit between people and data: HR Analytics, and Data &amp; Business Analytics.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-ghost" href="#experience">See experience</a>
+          <a class="btn btn-ghost" href="praveen_gella_resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="profile-photo.jpg" alt="Gella Praveen" onerror="this.parentElement.classList.add('photo-fallback');">
+          <div class="photo-initials">GP</div>
+        </div>
+      </div>
     </div>
     <div class="kpi-strip">
       <div class="kpi-tile">
@@ -526,10 +668,18 @@
     <div class="eyebrow">About</div>
     <div class="about-grid reveal">
       <div>
-        <h2>Why HR analytics</h2>
-        <p>I started in <strong>Computer Science</strong>, not HR. Somewhere between writing code and studying how people actually behave at work, I got interested in the problems HR teams usually solve by instinct instead of evidence — who's likely to leave, which training programs are worth the budget, where the hiring funnel quietly breaks.</p>
-        <p>My <strong>MBA in HR Analytics</strong> gave me the frameworks to ask those questions properly. My <strong>B.Tech</strong> gave me the tools to go answer them myself — in Python and Power BI — instead of waiting for someone else to run the numbers.</p>
-        <p>Based in Hyderabad, currently looking at HR Analytics and Data &amp; Business Analytics roles in India, the UAE, and the UK.</p>
+        <h2>About me</h2>
+        <p>MBA graduate specializing in Human Resource Analytics with a B.Tech in Computer Science, combining HR expertise with analytical and technical skills. Experienced in HR operations, employee engagement, recruitment, and workforce analytics through internships and academic projects. Proficient in Power BI, SQL, Excel, Python, and MS Office, with hands-on experience in building HR dashboards and predictive analytics models. Passionate about leveraging data-driven insights to improve talent management, employee experience, and organizational performance.</p>
+
+        <div class="unique-callout">
+          <div class="unique-label">What sets me apart</div>
+          <p>My combination of a technical background and HR expertise. A B.Tech in Computer Science and an MBA in Human Resource Analytics let me understand both technology and people — analyzing HR data with Power BI, SQL, Excel, and Python, while grounding it in core HR functions like recruitment, employee engagement, and performance management. That blend helps me bridge the gap between people and analytics, making HR more strategic and impactful.</p>
+        </div>
+
+        <div class="objective-block">
+          <div class="objective-label">Currently looking for</div>
+          <p>An entry-level opportunity in Human Resources, HR Analytics, People Analytics, Talent Acquisition, or Project Coordination where I can apply my analytical and HR skills to solve business challenges — contributing to organizational growth through data-driven decision-making while continuously learning and developing into a strategic HR professional.</p>
+        </div>
       </div>
       <div class="edu-ledger">
         <div class="edu-row">
@@ -547,7 +697,53 @@
   </div>
 </section>
 
-<section class="section" id="projects" style="background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+<section class="section" id="skills" style="background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="eyebrow">Skills</div>
+    <div class="section-head reveal">
+      <h2>What I work with</h2>
+      <p>The technical and HR toolkit behind the projects below — analytics tools on one side, people-function fluency on the other.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-cat">Technical</div>
+        <div class="tag-row">
+          <span class="tag">Power BI</span>
+          <span class="tag">Excel</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">Statistical Tools</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-cat">Domain</div>
+        <div class="tag-row">
+          <span class="tag">HR Analytics</span>
+          <span class="tag">Talent Acquisition</span>
+          <span class="tag">L&amp;D</span>
+          <span class="tag">Workforce Planning</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-cat">Tools</div>
+        <div class="tag-row">
+          <span class="tag">Odoo ATS/HRMS</span>
+          <span class="tag">SAP SuccessFactors</span>
+          <span class="tag">Workday</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-cat">Soft Skills</div>
+        <div class="tag-row">
+          <span class="tag">Stakeholder Management</span>
+          <span class="tag">Data Storytelling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
   <div class="wrap">
     <div class="eyebrow">Projects</div>
     <div class="section-head reveal">
@@ -649,7 +845,7 @@
   </div>
 </section>
 
-<section class="section" id="experience">
+<section class="section" id="experience" style="background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
   <div class="wrap">
     <div class="eyebrow">Experience</div>
     <div class="section-head reveal">
@@ -689,7 +885,7 @@
   </div>
 </section>
 
-<section class="section" id="certifications" style="background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+<section class="section" id="certifications">
   <div class="wrap">
     <div class="eyebrow">Certifications</div>
     <div class="section-head reveal">
@@ -737,7 +933,7 @@
   </div>
 </section>
 
-<footer>© 2026 Praveen Gella</footer>
+<footer>© 2026 Gella Praveen</footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
